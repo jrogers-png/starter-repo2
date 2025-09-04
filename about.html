@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - My Substack-Style Blog</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Open+Sans:wght@400;600&display=swap">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="site-title">My Thoughts</h1>
+            <p class="site-description">A collection of ideas, stories, and reflections</p>
+            
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html" class="active">About</a></li>
+                    <li><a href="#" class="subscribe-btn">Subscribe</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="about-page">
+            <h2>About Me</h2>
+            <img src="images/profile-placeholder.png" alt="Profile photo" class="about-image">
+            
+            <div class="about-content">
+                <p>
+                    Hello! I'm [Your Name], the writer behind this blog. I started this space to share my thoughts on [your topics], drawing from my background in [your background].
+                </p>
+                
+                <p>
+                    My writing explores the intersection of [topic 1], [topic 2], and [topic 3]. I believe that [your philosophy or approach to your topics].
+                </p>
+                
+                <p>
+                    When I'm not writing, you can find me [your hobbies or other activities]. I currently live in [location] with [any personal details you want to share].
+                </p>
+                
+                <h3>Why Subscribe?</h3>
+                <p>
+                    By subscribing to this blog, you'll receive:
+                </p>
+                <ul>
+                    <li>Weekly articles exploring [your topics]</li>
+                    <li>Book recommendations and reviews</li>
+                    <li>Exclusive content not published on the blog</li>
+                    <li>A community of like-minded readers</li>
+                </ul>
+                
+                <div class="cta-box">
+                    <h4>Stay Connected</h4>
+                    <p>Never miss a post. Subscribe to receive new articles directly in your inbox.</p>
+                    <form id="about-subscribe-form">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+                
+                <h3>Contact</h3>
+                <p>
+                    Have a question or just want to say hello? Feel free to reach out to me at <a href="mailto:your.email@example.com">your.email@example.com</a> or connect with me on social media.
+                </p>
+            </div>
+        </section>
+
+        <aside class="sidebar">
+            <div class="subscribe-widget">
+                <h4>Stay Updated</h4>
+                <p>Get new posts delivered to your inbox.</p>
+                <form id="subscribe-form">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+
+            <div class="topics-widget">
+                <h4>Topics</h4>
+                <ul class="topics-list">
+                    <li><a href="#">Technology</a></li>
+                    <li><a href="#">Personal Growth</a></li>
+                    <li><a href="#">Creativity</a></li>
+                    <li><a href="#">Books</a></li>
+                </ul>
+            </div>
+        </aside>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 My Substack-Style Blog. All rights reserved.</p>
+            <ul class="social-links">
+                <li><a href="#">Twitter</a></li>
+                <li><a href="#">GitHub</a></li>
+                <li><a href="#">LinkedIn</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <div class="modal" id="subscribe-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3>Subscribe to My Newsletter</h3>
+            <p>Get my latest posts delivered straight to your inbox.</p>
+            <form id="modal-subscribe-form">
+                <input type="text" placeholder="Your name" required>
+                <input type="email" placeholder="Your email address" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
