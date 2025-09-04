@@ -3,58 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>My Substack-Style Blog</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Open+Sans:wght@400;600&display=swap">
 </head>
 <body>
     <header>
-        <h1>My Portfolio</h1>
-        <nav>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    
-    <section id="about">
-        <h2>About Me</h2>
-        <p>Hello! I'm learning GitHub by creating this portfolio website.</p>
-    </section>
-    
-    <section id="projects">
-        <h2>My Projects</h2>
-        <div class="project">
-            <h3>Project 1</h3>
-            <p>Description of project 1</p>
+        <div class="container">
+            <h1 class="site-title">My Thoughts</h1>
+            <p class="site-description">A collection of ideas, stories, and reflections</p>
+            
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="#" class="subscribe-btn">Subscribe</a></li>
+                </ul>
+            </nav>
         </div>
-    </section>
-    
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <p>Email: your.email@example.com</p>
-        <form id="contact-form">
-    <div>
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
-    </div>
-    <div>
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-    </div>
-    <div>
-        <label for="message">Message:</label>
-        <textarea id="message" name="message" required></textarea>
-    </div>
-    <button type="submit">Send Message</button>
-</form>
-    </section>
-    
+    </header>
+
+    <main class="container">
+        <section class="featured-post">
+            <article>
+                <h2><a href="posts/first-post.html">Why I Started This Blog</a></h2>
+                <div class="post-meta">
+                    <span class="date">September 4, 2025</span>
+                    <span class="read-time">5 min read</span>
+                </div>
+                <p class="excerpt">
+                    Every journey begins with a single step. This blog represents my first step into sharing my thoughts with the world. I've always been fascinated by the power of words and how they can connect us across time and space...
+                </p>
+                <a href="posts/first-post.html" class="read-more">Continue reading →</a>
+            </article>
+        </section>
+
+        <section class="posts-list">
+            <article class="post-card">
+                <h3><a href="posts/second-post.html">The Art of Learning in Public</a></h3>
+                <div class="post-meta">
+                    <span class="date">September 3, 2025</span>
+                    <span class="read-time">7 min read</span>
+                </div>
+                <p class="excerpt">
+                    There's something powerful about learning in the open. When we share our journey, mistakes and all, we create opportunities for connection and growth that wouldn't exist otherwise...
+                </p>
+            </article>
+
+            <article class="post-card">
+                <h3><a href="posts/third-post.html">Three Books That Changed My Perspective</a></h3>
+                <div class="post-meta">
+                    <span class="date">September 1, 2025</span>
+                    <span class="read-time">10 min read</span>
+                </div>
+                <p class="excerpt">
+                    Some books don't just entertain—they transform. Here are three that fundamentally altered how I see the world and my place in it...
+                </p>
+            </article>
+        </section>
+
+        <aside class="sidebar">
+            <div class="about-widget">
+                <h4>About Me</h4>
+                <img src="images/profile-placeholder.png" alt="Profile photo" class="profile-image">
+                <p>Explorer of ideas. Writer of code and prose. Always curious.</p>
+                <a href="about.html" class="text-link">Learn more →</a>
+            </div>
+
+            <div class="subscribe-widget">
+                <h4>Stay Updated</h4>
+                <p>Get new posts delivered to your inbox.</p>
+                <form id="subscribe-form">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+
+            <div class="topics-widget">
+                <h4>Topics</h4>
+                <ul class="topics-list">
+                    <li><a href="#">Technology</a></li>
+                    <li><a href="#">Personal Growth</a></li>
+                    <li><a href="#">Creativity</a></li>
+                    <li><a href="#">Books</a></li>
+                </ul>
+            </div>
+        </aside>
+    </main>
+
     <footer>
-        <p>&copy; 2025 My Portfolio</p>
+        <div class="container">
+            <p>&copy; 2025 My Substack-Style Blog. All rights reserved.</p>
+            <ul class="social-links">
+                <li><a href="#">Twitter</a></li>
+                <li><a href="#">GitHub</a></li>
+                <li><a href="#">LinkedIn</a></li>
+            </ul>
+        </div>
     </footer>
-    
+
+    <div class="modal" id="subscribe-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3>Subscribe to My Newsletter</h3>
+            <p>Get my latest posts delivered straight to your inbox.</p>
+            <form id="modal-subscribe-form">
+                <input type="text" placeholder="Your name" required>
+                <input type="email" placeholder="Your email address" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
