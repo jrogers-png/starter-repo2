@@ -2,32 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Premier League Weekend Preview — My Personal Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Why I Started This Blog — My Personal Blog</title>
   <link rel="stylesheet" href="../styles.css" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Open+Sans:wght@400;600&display=swap" />
-  <style>
-    .post-header { margin-bottom: 2rem; text-align: center; }
-    .post-title { font-size: 2.2rem; margin-bottom: 0.5rem; }
-    .post-meta { color: var(--light-text); }
-    .blog-content { font-family: var(--font-serif); font-size: 1.1rem; line-height: 1.75; }
-    .grid { display: grid; gap: 1rem; }
-    @media (min-width: 900px) { .grid { grid-template-columns: 2fr 1fr; } }
-    .card { background: var(--light-background); border: 1px solid var(--border-color); border-radius: 8px; padding: 1rem; }
-    .fixtures-list { list-style: none; padding: 0; margin: 0; }
-    .fixture { display: flex; justify-content: space-between; padding: 0.65rem 0; border-bottom: 1px dashed var(--border-color); }
-    .fixture:last-child { border-bottom: 0; }
-    .table-wrap { overflow-x: auto; }
-    table.standings { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
-    .standings th, .standings td { text-align: right; padding: 0.55rem 0.6rem; border-bottom: 1px solid var(--border-color); white-space: nowrap; }
-    .standings th:first-child, .standings td:first-child,
-    .standings th:nth-child(2), .standings td:nth-child(2) { text-align: left; }
-    .badge { display: inline-block; font-size: 0.75rem; padding: 0.15rem 0.45rem; border-radius: 999px; background: var(--accent-color); color: white; }
-    .source-note { font-size: 0.85rem; color: var(--light-text); margin-top: 0.5rem; }
-    .share-buttons { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.75rem; }
-    .share-button { padding: 0.4rem 0.7rem; border-radius: 6px; background: var(--light-background); border: 1px solid var(--border-color); }
-    .muted { color: var(--light-text); }
-  </style>
 </head>
 <body>
   <header>
@@ -44,68 +22,79 @@
     </div>
   </header>
 
-  <main class="container grid">
+  <main class="container">
     <article class="post">
       <header class="post-header">
-        <h1 class="post-title">Premier League Weekend Preview</h1>
+        <h1 class="post-title">Why I Started This Blog</h1>
         <div class="post-meta">
-          <span class="date">September 6–7, 2025</span>
-          <span class="read-time">4 min read</span>
+          <span class="date">September 5, 2025</span>
+          <span class="read-time">5 min read</span>
         </div>
       </header>
 
       <div class="blog-content">
         <p>
-          Here’s a quick look at this weekend’s fixtures and the current table snapshot.
-          The fixtures and standings data are loaded from a JSON file in this repo so you can update them easily in future gameweeks.
+          Every journey begins with a single step. This blog represents my first step into sharing my thoughts with the world. I've always been fascinated by the power of words and how they can connect us across time and space.
         </p>
 
-        <div class="card">
-          <h3>Weekend Fixtures</h3>
-          <ul id="fixtures" class="fixtures-list"></ul>
-          <p class="source-note">
-            Times are local to the match venue. For official schedules and any late changes, see the
-            <a href="https://www.premierleague.com/en/matches" target="_blank" rel="noopener">Premier League fixtures</a>.
-          </p>
-        </div>
+        <p>
+          For years, I've kept these thoughts to myself, jotting them down in private journals or sharing them only with close friends. But I've come to realize that ideas grow stronger when they're shared, challenged, and refined through conversation.
+        </p>
 
-        <div class="card">
-          <h3>League Table <span class="badge" id="asof"></span></h3>
-          <div class="table-wrap">
-            <table class="standings" id="standings-table" aria-label="Premier League Standings">
-              <thead>
-                <tr>
-                  <th>#</th>
-                  <th>Club</th>
-                  <th>MP</th>
-                  <th>W</th>
-                  <th>D</th>
-                  <th>L</th>
-                  <th>GF</th>
-                  <th>GA</th>
-                  <th>GD</th>
-                  <th>Pts</th>
-                </tr>
-              </thead>
-              <tbody></tbody>
-            </table>
-          </div>
-          <p class="source-note">
-            Snapshot in this post is maintained manually for the repo. Check the
-            <a href="https://www.premierleague.com/en/tables" target="_blank" rel="noopener">official table</a>
-            or <a href="https://www.espn.com/soccer/standings/_/league/eng.1" target="_blank" rel="noopener">ESPN standings</a> for live updates.
-          </p>
-        </div>
+        <h2>Finding My Voice</h2>
+        <p>
+          Writing publicly is intimidating. There's a vulnerability in putting your thoughts out into the world, opening them up to criticism and judgment. But there's also an incredible power in finding your voice and using it.
+        </p>
 
-        <div class="share-section">
-          <h4>Share this post</h4>
-          <div class="share-buttons">
-            <a class="share-button" href="https://twitter.com/intent/tweet?text=Weekend%20Premier%20League%20Preview&url=https://example.com/posts/premier-league-weekend.html" target="_blank" rel="noopener">Twitter</a>
-            <a class="share-button" href="https://www.facebook.com/sharer/sharer.php?u=https://example.com/posts/premier-league-weekend.html" target="_blank" rel="noopener">Facebook</a>
-            <a class="share-button" href="https://www.linkedin.com/shareArticle?mini=true&url=https://example.com/posts/premier-league-weekend.html&title=Premier%20League%20Weekend%20Preview" target="_blank" rel="noopener">LinkedIn</a>
-            <button class="share-button" id="copyLinkBtn" type="button">Copy Link</button>
-          </div>
-          <p id="copyMsg" class="muted" role="status" aria-live="polite"></p>
+        <p>
+          I don't claim to have all the answers. In fact, I'm starting this blog precisely because I have so many questions. I want to explore ideas, challenge assumptions (including my own), and learn from others along the way.
+        </p>
+
+        <blockquote>
+          "The scariest moment is always just before you start." — Stephen King
+        </blockquote>
+
+        <h2>What You Can Expect</h2>
+        <p>
+          This blog will focus on a few key areas that I'm passionate about:
+        </p>
+
+        <ul>
+          <li><strong>Technology and its impact on society</strong> — How are new technologies shaping the way we live, work, and relate to one another?</li>
+          <li><strong>Personal growth and learning</strong> — What does it mean to live a meaningful life? How can we continue to grow and evolve?</li>
+          <li><strong>Creativity and the creative process</strong> — What does it take to bring ideas to life? How can we nurture creativity in ourselves and others?</li>
+          <li><strong>Books and ideas</strong> — Deep dives into books that have changed my perspective and the ideas they contain.</li>
+        </ul>
+
+        <p>
+          I plan to publish new articles weekly, typically on Wednesdays. Some will be short reflections, while others might be longer explorations of complex topics. All of them will be written with care and a genuine desire to connect.
+        </p>
+
+        <h2>An Invitation</h2>
+        <p>
+          This blog isn't just about me sharing my thoughts—it's about starting conversations. I invite you to join me on this journey. Subscribe if you'd like to receive new posts directly in your inbox. Comment with your own perspectives. Share articles that resonate with you.
+        </p>
+
+        <p>
+          Thank you for being here. I'm excited to see where this journey takes us.
+        </p>
+      </div>
+
+      <div class="author-section">
+        <img src="../images/profile-placeholder.png" alt="Author" class="author-image" />
+        <div>
+          <h4>Written by [Your Name]</h4>
+          <p class="author-bio">Explorer of ideas. Writer of code and prose. Always curious.</p>
+        </div>
+      </div>
+
+      <div class="share-section">
+        <h4>Share this post</h4>
+        <div class="share-buttons">
+          <a href="#" class="share-button">Twitter</a>
+          <a href="#" class="share-button">Facebook</a>
+          <a href="#" class="share-button">LinkedIn</a>
+          <a href="#" class="share-button">Copy Link</a>
         </div>
       </div>
     </article>
@@ -162,23 +151,6 @@
     </div>
   </div>
 
-  <!-- Data loader -->
-  <script src="../js/epl.js"></script>
-  <script>
-    // Copy link helper (kept on-page so this file is drop-in)
-    const copyBtn = document.getElementById('copyLinkBtn');
-    const copyMsg = document.getElementById('copyMsg');
-    if (copyBtn) {
-      copyBtn.addEventListener('click', async () => {
-        try {
-          await navigator.clipboard.writeText(window.location.href);
-          copyMsg.textContent = 'Link copied to clipboard.';
-        } catch {
-          copyMsg.textContent = 'Copy failed. Select the URL bar and copy.';
-        }
-      });
-    }
-  </script>
   <script src="../script.js"></script>
 </body>
 </html>
