@@ -1,198 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Personal Blog</title>
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Open+Sans:wght@400;600&display=swap" />
-    <style>
-      /* Small, page-specific tweaks for the EPL sidebar snapshot */
-      .sidebar .card { background: var(--light-background); border: 1px solid var(--border-color); border-radius: 8px; padding: 1rem; }
-      .table-wrap { overflow-x: auto; }
-      table.compact { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
-      .compact th, .compact td { padding: 0.4rem 0.5rem; border-bottom: 1px solid var(--border-color); text-align: right; white-space: nowrap; }
-      .compact th:first-child, .compact td:first-child,
-      .compact th:nth-child(2), .compact td:nth-child(2) { text-align: left; }
-      .muted { color: var(--light-text); font-size: 0.85rem; }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Personal Blog</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Open+Sans:wght@400;600&display=swap" />
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1 class="site-title">My Thoughts</h1>
-            <p class="site-description">A collection of ideas, stories, and reflections</p>
-            
-            <nav>
-                <ul>
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="#" class="subscribe-btn">Subscribe</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <main class="container">
-        <!-- FEATURED: EPL post -->
-        <section class="featured-post">
-            <article>
-                <h2><a href="posts/premier-league-weekend.html">Premier League Weekend Preview</a></h2>
-                <div class="post-meta">
-                    <span class="date">September 6–7, 2025</span>
-                    <span class="read-time">4 min read</span>
-                </div>
-                <p class="excerpt">
-                    A quick look at this weekend’s fixtures and a snapshot of the current Premier League table. The post pulls data from a simple JSON file in the repo—easy to tweak each gameweek…
-                </p>
-                <a href="posts/premier-league-weekend.html" class="read-more">Read the preview →</a>
-            </article>
-        </section>
-
-        <section class="posts-list">
-            <!-- Previously featured "first post" moved here -->
-            <article class="post-card">
-                <h3><a href="posts/first-post.html">Why I Started This Blog</a></h3>
-                <div class="post-meta">
-                    <span class="date">September 5, 2025</span>
-                    <span class="read-time">5 min read</span>
-                </div>
-                <p class="excerpt">
-                    Every journey begins with a single step. This blog represents my first step into sharing my thoughts with the world. I've always been fascinated by the power of words and how they can connect us across time and space…
-                </p>
-            </article>
-
-            <article class="post-card">
-                <h3><a href="posts/second-post.html">The Art of Learning in Public</a></h3>
-                <div class="post-meta">
-                    <span class="date">September 3, 2025</span>
-                    <span class="read-time">7 min read</span>
-                </div>
-                <p class="excerpt">
-                    There's something powerful about learning in the open. When we share our journey, mistakes and all, we create opportunities for connection and growth that wouldn't exist otherwise…
-                </p>
-            </article>
-
-            <article class="post-card">
-                <h3><a href="posts/third-post.html">Three Books That Changed My Perspective</a></h3>
-                <div class="post-meta">
-                    <span class="date">September 1, 2025</span>
-                    <span class="read-time">10 min read</span>
-                </div>
-                <p class="excerpt">
-                    Some books don't just entertain—they transform. Here are three that fundamentally altered how I see the world and my place in it…
-                </p>
-            </article>
-        </section>
-
-        <aside class="sidebar">
-            <div class="about-widget">
-                <h4>About Me</h4>
-                <img src="images/profile-placeholder.png" alt="Profile photo" class="profile-image" />
-                <p>Explorer of ideas. Writer of code and prose. Always curious.</p>
-                <a href="about.html" class="text-link">Learn more →</a>
-            </div>
-
-            <div class="subscribe-widget">
-                <h4>Stay Updated</h4>
-                <p>Get new posts delivered to your inbox.</p>
-                <form id="subscribe-form">
-                    <input type="email" placeholder="Your email address" required />
-                    <button type="submit">Subscribe</button>
-                </form>
-            </div>
-
-            <div class="topics-widget">
-                <h4>Topics</h4>
-                <ul class="topics-list">
-                    <li><a href="#">Technology</a></li>
-                    <li><a href="#">Personal Growth</a></li>
-                    <li><a href="#">Creativity</a></li>
-                    <li><a href="#">Books</a></li>
-                    <li><a href="#">Sports</a></li>
-                </ul>
-            </div>
-
-            <!-- NEW: EPL snapshot on the homepage (top 5) -->
-            <div class="card">
-                <h4>Premier League Table (Snapshot)</h4>
-                <div class="table-wrap">
-                    <table class="compact" aria-label="Premier League Standings Snapshot">
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Club</th>
-                                <th>MP</th>
-                                <th>Pts</th>
-                            </tr>
-                        </thead>
-                        <tbody id="epl-top5">
-                            <tr><td colspan="4">Loading…</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-                <p id="epl-asof" class="muted" aria-live="polite"></p>
-                <p class="muted">Full post: <a href="posts/premier-league-weekend.html">Weekend Preview</a></p>
-            </div>
-        </aside>
-    </main>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 My Personal Blog. All rights reserved.</p>
-            <ul class="social-links">
-                <li><a href="#">Twitter</a></li>
-                <li><a href="#">GitHub</a></li>
-                <li><a href="#">LinkedIn</a></li>
-            </ul>
-        </div>
-    </footer>
-
-    <div class="modal" id="subscribe-modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <h3>Subscribe to My Newsletter</h3>
-            <p>Get my latest posts delivered straight to your inbox.</p>
-            <form id="modal-subscribe-form">
-                <input type="text" placeholder="Your name" required />
-                <input type="email" placeholder="Your email address" required />
-                <button type="submit">Subscribe</button>
-            </form>
-        </div>
+  <header>
+    <div class="container">
+      <h1 class="site-title">My Thoughts</h1>
+      <p class="site-description">A collection of ideas, stories, and reflections</p>
+      <nav>
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="#" class="subscribe-btn">Subscribe</a></li>
+        </ul>
+      </nav>
     </div>
+  </header>
 
-    <!-- Tiny inline loader for the sidebar snapshot (reuses the same JSON file) -->
-    <script>
-      (async function () {
-        const tbody = document.getElementById('epl-top5');
-        const asof = document.getElementById('epl-asof');
-        try {
-          const res = await fetch('data/epl-standings-2025-09-05.json', { cache: 'no-store' });
-          const data = await res.json();
+  <main class="container">
+    <!-- FEATURED: EPL POST -->
+    <section class="featured-post">
+      <article>
+        <h2><a href="posts/premier-league-weekend.html">Premier League Weekend Preview</a></h2>
+        <div class="post-meta">
+          <span class="date">September 6–7, 2025</span>
+          <span class="read-time">4 min read</span>
+        </div>
+        <p class="excerpt">
+          A quick look at this weekend’s fixtures and the current Premier League table. Data comes from a simple JSON file in the repo so you can update it each week…
+        </p>
+        <a href="posts/premier-league-weekend.html" class="read-more">Read the preview →</a>
+      </article>
+    </section>
 
-          if (asof && data.asOf) {
-            const d = new Date(data.asOf);
-            asof.textContent = `As of ${d.toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' })}`;
-          }
+    <!-- OTHER POSTS -->
+    <section class="posts-list">
+      <article class="post-card">
+        <h3><a href="posts/first-post.html">Why I Started This Blog</a></h3>
+        <div class="post-meta">
+          <span class="date">September 5, 2025</span>
+          <span class="read-time">5 min read</span>
+        </div>
+        <p class="excerpt">
+          Every journey begins with a single step. This blog represents my first step into sharing my thoughts with the world. I've always been fascinated by the power of words and how they can connect us across time and space…
+        </p>
+      </article>
 
-          const top5 = (data.standings || []).slice(0, 5);
-          if (!top5.length) throw new Error('No standings found.');
+      <article class="post-card">
+        <h3><a href="posts/second-post.html">The Art of Learning in Public</a></h3>
+        <div class="post-meta">
+          <span class="date">September 3, 2025</span>
+          <span class="read-time">7 min read</span>
+        </div>
+        <p class="excerpt">
+          There's something powerful about learning in the open. When we share our journey, mistakes and all, we create opportunities for connection and growth that wouldn't exist otherwise…
+        </p>
+      </article>
 
-          tbody.innerHTML = top5.map(row => `
-            <tr>
-              <td>${row.pos}</td>
-              <td>${row.team}</td>
-              <td>${row.mp}</td>
-              <td><strong>${row.pts}</strong></td>
-            </tr>
-          `).join('');
-        } catch (e) {
-          console.error('Failed to load EPL snapshot', e);
-          tbody.innerHTML = '<tr><td colspan="4">Could not load standings.</td></tr>';
-        }
-      })();
-    </script>
+      <article class="post-card">
+        <h3><a href="posts/third-post.html">Three Books That Changed My Perspective</a></h3>
+        <div class="post-meta">
+          <span class="date">September 1, 2025</span>
+          <span class="read-time">10 min read</span>
+        </div>
+        <p class="excerpt">
+          Some books don't just entertain—they transform. Here are three that fundamentally altered how I see the world and my place in it…
+        </p>
+      </article>
+    </section>
 
-    <script src="script.js"></script>
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="about-widget">
+        <h4>About Me</h4>
+        <img src="images/profile-placeholder.png" alt="Profile photo" class="profile-image" />
+        <p>Explorer of ideas. Writer of code and prose. Always curious.</p>
+        <a href="about.html" class="text-link">Learn more →</a>
+      </div>
+
+      <div class="subscribe-widget">
+        <h4>Stay Updated</h4>
+        <p>Get new posts delivered to your inbox.</p>
+        <form id="subscribe-form">
+          <input type="email" placeholder="Your email address" required />
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+
+      <div class="topics-widget">
+        <h4>Topics</h4>
+        <ul class="topics-list">
+          <li><a href="#">Technology</a></li>
+          <li><a href="#">Personal Growth</a></li>
+          <li><a href="#">Creativity</a></li>
+          <li><a href="#">Books</a></li>
+          <li><a href="#">Sports</a></li>
+        </ul>
+      </div>
+    </aside>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 My Personal Blog. All rights reserved.</p>
+      <ul class="social-links">
+        <li><a href="#">Twitter</a></li>
+        <li><a href="#">GitHub</a></li>
+        <li><a href="#">LinkedIn</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <div class="modal" id="subscribe-modal">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <h3>Subscribe to My Newsletter</h3>
+      <p>Get my latest posts delivered straight to your inbox.</p>
+      <form id="modal-subscribe-form">
+        <input type="text" placeholder="Your name" required />
+        <input type="email" placeholder="Your email address" required />
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
