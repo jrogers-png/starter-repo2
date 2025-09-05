@@ -1,6 +1,6 @@
-# Git Blog
+# Personal Blog Template
 
-A clean, minimalist blog template. This project focuses on readability and content presentation, making it perfect for writers who want their words to take center stage.
+A clean, minimalist blog template with a modern design. This project focuses on readability and content presentation, making it perfect for writers who want their words to take center stage.
 
 ## Features
 
